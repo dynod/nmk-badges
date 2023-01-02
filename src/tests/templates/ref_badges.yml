@@ -1,2 +1,8 @@
 refs:
     - pip://nmk-badges!plugin.yml
+
+config:
+    badges:
+        - alt: Some text
+          img: http://foo.org/bar.png
+          url: http://path.to/foo

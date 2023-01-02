@@ -1,6 +1,7 @@
 # Badges plugin definition
 refs:
     - path.yml    # Python path contrib
+    - badges.yml  # Badges generation logic
 
 # Extra config
 config:

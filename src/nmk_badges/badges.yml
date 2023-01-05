@@ -1,7 +1,7 @@
 # Badges generation logic
 config:
 
-    # Target mardown file for badges generation
+    # Target markdown file for badges generation
     badgesTarget: ${PROJECTDIR}/README.md
 
     # Badges generation stamp file
@@ -9,7 +9,7 @@ config:
 
     # List of badges to be generated
     # Each item in this list is expected to be an object with the following keys:
-    # - *alt*: Alternative text for the bad image
+    # - *alt*: Alternative text for the badge image
     # - *img*: Badge image URL
     # - *url*: Badge target link URL
     badges: []

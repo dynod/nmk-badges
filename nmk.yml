@@ -23,3 +23,7 @@ config:
             description: Readme badges generation plugin for nmk build system
         options.package_data:
                 nmk_badges: "*.yml"
+
+    # Github issues logged in nmk project
+    githubIssuesRepo: nmk
+    githubIssuesLabel: "plugin:badges"

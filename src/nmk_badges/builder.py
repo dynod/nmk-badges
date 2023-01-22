@@ -27,7 +27,7 @@ class NmkBadgesBuilder(NmkTaskBuilder):
                 # Check for conditions
                 ok_to_insert = True
                 for condition, expected in [("if", True), ("unless", False)]:
-                    if condition in badge and (is_condition_set(self.model.config[badge[condition]].value) != expected):
+                    if condition in badge and (is_condition_set(badge[condition]) != expected):
                         # Condition not met: skip this badge insertion
                         self.logger.debug(f"Skipped bad generation for '{badge['alt']}': {condition} condition not met")  # NOQA:B028
                         ok_to_insert = False

@@ -1,6 +1,7 @@
 from typing import Dict, List
 
 from nmk.model.builder import NmkTaskBuilder
+from nmk.utils import is_condition_set
 
 
 class NmkBadgesBuilder(NmkTaskBuilder):
@@ -20,10 +21,21 @@ class NmkBadgesBuilder(NmkTaskBuilder):
 
         # Index found?
         if begin_index is not None and end_index is not None and end_index > begin_index:
-            # Insert badges
+            # Browse required badges
             new_lines = all_lines[: begin_index + 1]
             for badge in badges:
-                new_lines.append(f"[![{badge['alt']}]({badge['img']})]({badge['url']})\n")
+                # Check for conditions
+                ok_to_insert = True
+                for condition, expected in [("if", True), ("unless", False)]:
+                    if condition in badge and (is_condition_set(self.model.config[badge[condition]].value) != expected):
+                        # Condition not met: skip this badge insertion
+                        self.logger.debug(f"Skipped bad generation for '{badge['alt']}': {condition} condition not met")  # NOQA:B028
+                        ok_to_insert = False
+                        break
+
+                # Insert badge
+                if ok_to_insert:
+                    new_lines.append(f"[![{badge['alt']}]({badge['img']})]({badge['url']})\n")
             new_lines.extend(all_lines[end_index:])
 
             # Write updated lines

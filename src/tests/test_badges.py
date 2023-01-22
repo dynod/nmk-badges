@@ -43,4 +43,16 @@ class TestProtoPlugin(NmkBaseTester):
         self.nmk(self.prepare_badge_project("ok"), extra_args=["badges"])
         self.compare_readme("no_end", False)
         with self.readme.open() as r:
-            assert "[![Some text](http://foo.org/bar.png)](http://path.to/foo)" in r.read()
+            readme = r.read()
+            assert "[![Some text](http://foo.org/bar.png)](http://path.to/foo)" in readme
+            assert "[![Expected if](xxx)](yyy)" in readme
+            assert "[![Unexpected if](xxx)](yyy)" not in readme
+            assert "[![Expected unless](xxx)](yyy)" in readme
+            assert "[![Unexpected unless](xxx)](yyy)" not in readme
+
+        self.check_logs(
+            [
+                "Skipped bad generation for 'Unexpected if': if condition not met",
+                "Skipped bad generation for 'Unexpected unless': unless condition not met",
+            ]
+        )

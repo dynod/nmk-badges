@@ -12,6 +12,8 @@ config:
     # - *alt*: Alternative text for the badge image
     # - *img*: Badge image URL
     # - *url*: Badge target link URL
+    # - if: generate this badge if condition is met
+    # - unless: generate this badge unless condition is met
     badges: []
 
     # Begin/End patterns for badges insertion in markdown file

@@ -2,7 +2,26 @@ refs:
     - pip://nmk-badges!plugin.yml
 
 config:
+    configOK: OK
+    configKO: False
+    
     badges:
         - alt: Some text
           img: http://foo.org/bar.png
           url: http://path.to/foo
+        - alt: Expected if
+          img: xxx
+          url: yyy
+          if: configOK
+        - alt: Unexpected if
+          img: xxx
+          url: yyy
+          if: configKO
+        - alt: Expected unless
+          img: xxx
+          url: yyy
+          unless: configKO
+        - alt: Unexpected unless
+          img: xxx
+          url: yyy
+          unless: configOK

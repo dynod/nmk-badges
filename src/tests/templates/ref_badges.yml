@@ -12,16 +12,16 @@ config:
         - alt: Expected if
           img: xxx
           url: yyy
-          if: configOK
+          if: ${configOK}
         - alt: Unexpected if
           img: xxx
           url: yyy
-          if: configKO
+          if: ${configKO}
         - alt: Expected unless
           img: xxx
           url: yyy
-          unless: configKO
+          unless: ${configKO}
         - alt: Unexpected unless
           img: xxx
           url: yyy
-          unless: configOK
+          unless: ${configOK}

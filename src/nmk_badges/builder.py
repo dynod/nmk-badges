@@ -1,3 +1,7 @@
+"""
+Python module for **nmk-badges** builders.
+"""
+
 from typing import Dict, List
 
 from nmk.model.builder import NmkTaskBuilder
@@ -5,7 +9,24 @@ from nmk.utils import is_condition_set
 
 
 class NmkBadgesBuilder(NmkTaskBuilder):
+    """
+    Builder for **badges** task.
+    """
+
     def build(self, badges: List[Dict[str, str]], begin_pattern: str, end_pattern: str):
+        """
+        Build logic for **badges** task:
+
+        * looks for the begin/end patterns in the input file
+        * replace lines between them by generated ones for configured badges
+        * skip badges when "if" or "unless" condition is not met
+        * touch the output stamp file
+
+        :param badges: List of configured badges to be inserted
+        :param begin_pattern: Begin pattern to look for in input file
+        :param end_pattern: End pattern to look for in input file
+        """
+
         # Read lines from target file
         with self.main_input.open() as f:
             all_lines = f.readlines()

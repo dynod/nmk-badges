@@ -16,4 +16,4 @@ config:
 
     # Plugin help links dict
     nmkPluginsDocs:
-        nmk-badges: https://nmk-badges.readthedocs.io/en/stable
+        nmk-badges: https://nmk-badges.readthedocs.io/

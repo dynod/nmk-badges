@@ -10,7 +10,7 @@ Readme badges generation plugin for nmk build system
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Flake8 analysis result](https://img.shields.io/badge/flake8-0-green)](https://flake8.pycqa.org/)
 [![Code coverage](https://img.shields.io/codecov/c/github/dynod/nmk-badges)](https://app.codecov.io/gh/dynod/nmk-badges)
-[![Documentation Status](https://readthedocs.org/projects/nmk-badges/badge/?version=stable)](https://nmk-badges.readthedocs.io/en/stable/?badge=stable)
+[![Documentation Status](https://readthedocs.org/projects/nmk-badges/badge/?version=stable)](https://nmk-badges.readthedocs.io/)
 <!-- NMK-BADGES-END -->
 
 This plugin adds support for README markdown [badges/shields](https://shields.io/) generation.
@@ -25,7 +25,7 @@ refs:
 
 ## Documentation
 
-This plugin documentation is available [here](https://nmk-badges.readthedocs.io/en/stable)
+This plugin documentation is available [here](https://nmk-badges.readthedocs.io/)
 
 ## Issues
 

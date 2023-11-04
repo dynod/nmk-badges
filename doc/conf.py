@@ -9,7 +9,6 @@
 project = "nmk-badges"
 copyright = "2023, The dynod project"
 author = "The dynod project"
-release = "0.2.2"
 
 # Extensions configuration
 extensions = ["autoapi.extension", "myst_parser", "sphinx_rtd_theme"]

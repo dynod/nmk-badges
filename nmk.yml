@@ -28,6 +28,3 @@ config:
     # Github issues logged in nmk project
     githubIssuesRepo: nmk
     githubIssuesLabel: "plugin:badges"
-
-    # Minor increment
-    docVersionIncrement: "0.0.1"

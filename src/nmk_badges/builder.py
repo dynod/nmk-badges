@@ -2,8 +2,6 @@
 Python module for **nmk-badges** builders.
 """
 
-from typing import Dict, List
-
 from nmk.model.builder import NmkTaskBuilder
 from nmk.utils import is_condition_set
 
@@ -13,7 +11,7 @@ class NmkBadgesBuilder(NmkTaskBuilder):
     Builder for **badges** task.
     """
 
-    def build(self, badges: List[Dict[str, str]], begin_pattern: str, end_pattern: str):
+    def build(self, badges: list[dict[str, str]], begin_pattern: str, end_pattern: str):
         """
         Build logic for **badges** task:
 

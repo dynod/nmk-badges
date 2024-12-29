@@ -21,12 +21,10 @@ config:
     pythonPackageRequirements:
         - nmk-base
 
-    # Extra setup data
-    pythonSetupItems:
-        metadata:
+    # Extra project data
+    pythonProjectFileItems:
+        project:
             description: Readme badges generation plugin for nmk build system
-        options.package_data:
-                nmk_badges: "*.yml"
 
     # Github issues logged in nmk project
     githubIssuesRepo: nmk
